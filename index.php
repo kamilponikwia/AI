@@ -1,4 +1,4 @@
 <?php
-require_once 'config.php';
+require_once dirname(__FILE__).'/config.php';
 
-include _ROOT_PATH.'/app/calc_cred_view.php';
+include _ROOT_PATH.'/app/calc_cred.php';
