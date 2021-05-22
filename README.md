@@ -11,4 +11,5 @@ Spis etapów:
 
 1. [Widok, kontroler.](https://github.com/kamilponikwia/AI/tree/step-1) 
 2. [Ochrona dostępu.](https://github.com/kamilponikwia/AI/tree/step-2) 
-3. [Proste szablonowanie.](https://github.com/kamilponikwia/AI/tree/step-3) 
+3. [Szablonowanie Smarty.](https://github.com/kamilponikwia/AI/tree/step-3)
+4. [Kontroler główny (jeden punkt wejścia) oraz obiektowość.](https://github.com/kamilponikwia/AI/tree/step-4)
