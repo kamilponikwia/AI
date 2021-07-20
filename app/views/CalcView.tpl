@@ -1,4 +1,4 @@
-{extends file=$conf->root_path|cat:"/app/views/templates/main.tpl"}
+{extends file=$conf->root_path|cat:"/templates/main.tpl"}
 
 {block name=footer}<p><a href="https://github.com/kamilponikwia/AI" target="_blank">GitHub</a></p>{/block}
 
