@@ -24,9 +24,9 @@ class CalcCtrl {
 
     public function getParams() {
 
-        $this->form->amount = isset($_REQUEST ['amount']) ? $_REQUEST ['amount'] : null;
-        $this->form->period = isset($_REQUEST ['period']) ? $_REQUEST ['period'] : null;
-        $this->form->interest = isset($_REQUEST ['interest']) ? $_REQUEST ['interest'] : null;
+        $this->form->amount = getFromRequest('amount');
+        $this->form->period = getFromRequest('period');
+        $this->form->interest = getFromRequest('interest');
     }
 
     public function validate() {
@@ -66,7 +66,7 @@ class CalcCtrl {
         return !$this->msgs->isError();
     }
 
-    public function process() {
+    public function action_calcCompute() {
 
         $this->getParams();
 
@@ -85,7 +85,14 @@ class CalcCtrl {
         $this->generateView();
     }
 
+    public function action_calcShow() {
+        getMessages()->addInfo('Witaj w kalkulatorze');
+        $this->generateView();
+    }
+
     public function generateView() {
+
+        getSmarty()->assign('user', unserialize($_SESSION['user']));
 
         getSmarty()->assign('page_title', 'Aplikacje internetowe');
         getSmarty()->assign('page_description', 'Praca własna w ramach przedmiotu: Aplikacje internetowe');
