@@ -15,4 +15,4 @@ Spis etapów:
 4. [Kontroler główny (jeden punkt wejścia) oraz obiektowość.](https://github.com/kamilponikwia/AI/tree/step-4)
 5. [Nowa struktura (początek organizacji frameworka).](https://github.com/kamilponikwia/AI/tree/step-5)
 6. [Przestrzenie nazw i automatyczne ładowanie klas.](https://github.com/kamilponikwia/AI/tree/step-6)
-7. [Ochrona zasobów.](https://github.com/kamilponikwia/AI/tree/step-7)
+7. [Ochrona zasobów i routing.](https://github.com/kamilponikwia/AI/tree/step-7)
