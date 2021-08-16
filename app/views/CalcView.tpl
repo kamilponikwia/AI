@@ -1,4 +1,4 @@
-{extends file=$conf->root_path|cat:"/app/views/templates/main.tpl"}
+{extends file="main.tpl"}
 
 {block name=footer}<p><a href="https://github.com/kamilponikwia/AI" target="_blank">GitHub</a></p>{/block}
 
@@ -24,6 +24,7 @@
                 </fieldset>
             </form>
         </div>
+                   
 
         <div class="l-box-lrg pure-u-1 pure-u-med-3-5">
 
