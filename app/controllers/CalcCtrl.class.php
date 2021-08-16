@@ -1,9 +1,9 @@
 <?php
 
 require_once $conf->root_path . '/lib/smarty/Smarty.class.php';
-require_once $conf->root_path . '/lib/Messages.class.php';
-require_once $conf->root_path . '/app/calc/CalcForm.class.php';
-require_once $conf->root_path . '/app/calc/CalcResult.class.php';
+require_once $conf->root_path . '/core/Messages.class.php';
+require_once $conf->root_path . '/app/controllers/CalcForm.class.php';
+require_once $conf->root_path . '/app/controllers/CalcResult.class.php';
 
 class CalcCtrl {
 
@@ -99,7 +99,7 @@ class CalcCtrl {
 
         $smarty->assign('hide_intro', $this->hide_intro);
 
-        $smarty->display($conf->root_path . '/app/calc/CalcView.tpl');
+        $smarty->display($conf->root_path . '/app/views/CalcView.tpl');
     }
 
 }
