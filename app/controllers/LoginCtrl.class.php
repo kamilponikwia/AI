@@ -32,10 +32,10 @@ class LoginCtrl {
 
 
             if ($this->form->login == "") {
-                getMessages()->addError('Nie podano loginu');
+                getMessages()->addError('Nie podano loginu!');
             }
             if ($this->form->pass == "") {
-                getMessages()->addError('Nie podano hasła');
+                getMessages()->addError('Nie podano hasła!');
             }
         }
 

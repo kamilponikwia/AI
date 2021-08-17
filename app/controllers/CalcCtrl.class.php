@@ -84,6 +84,7 @@ class CalcCtrl {
         }
 
         try {
+            
             $database = new \Medoo\Medoo([
                 'type' => 'mysql',
                 'host' => 'localhost',
@@ -107,7 +108,7 @@ class CalcCtrl {
                 "date" => date("Y-m-d")
             ]);
         } catch (\PDOException $ex) {
-            getMessages()->addError("DB Error: " . $ex->getMessage());
+            getMessages()->addError("DB Error:" . $ex->getMessage());
         }
         
         $this->generateView();

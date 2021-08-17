@@ -1,10 +1,10 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types=1); 
 /**
  * Medoo Database Framework.
  *
- * The Lightweight PHP Database Framework to Accelerate Development.
+ * The Lightweight PHP Database Framework to Accelerate Development
  *
  * @version 2.1.2
  * @author Angel Lai
