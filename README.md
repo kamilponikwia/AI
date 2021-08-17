@@ -16,3 +16,4 @@ Spis etapów:
 5. [Nowa struktura (początek organizacji frameworka).](https://github.com/kamilponikwia/AI/tree/step-5)
 6. [Przestrzenie nazw i automatyczne ładowanie klas.](https://github.com/kamilponikwia/AI/tree/step-6)
 7. [Ochrona zasobów i routing.](https://github.com/kamilponikwia/AI/tree/step-7)
+8. [Projekt bazo-danowy (biblioteka Medoo).](https://github.com/kamilponikwia/AI/tree/step-8)
