@@ -10,46 +10,56 @@ class LoginCtrl {
     private $form;
 
     public function __construct() {
+
         $this->form = new LoginForm();
     }
 
     public function getParams() {
+
         $this->form->login = getFromRequest('login');
         $this->form->pass = getFromRequest('pass');
     }
 
     public function validate() {
+
         if (!(isset($this->form->login) && isset($this->form->pass))) {
-            getMessages()->addError('Błąd!');
+
+            return false;
         }
 
+
         if (!getMessages()->isError()) {
+
 
             if ($this->form->login == "") {
-                getMessages()->addError('Wprowadź login!');
+                getMessages()->addError('Nie podano loginu');
             }
             if ($this->form->pass == "") {
-                getMessages()->addError('Wprowadź hasło!');
+                getMessages()->addError('Nie podano hasła');
             }
         }
+
         if (!getMessages()->isError()) {
 
+
             if ($this->form->login == "admin" && $this->form->pass == "admin") {
-                if (session_status() == PHP_SESSION_NONE) {
-                    session_start();
-                }
+
+
                 $user = new User($this->form->login, 'admin');
 
                 $_SESSION['user'] = serialize($user);
+
+                addRole($user->role);
             } else if ($this->form->login == "user" && $this->form->pass == "user") {
-                if (session_status() == PHP_SESSION_NONE) {
-                    session_start();
-                }
+
+
                 $user = new User($this->form->login, 'user');
 
                 $_SESSION['user'] = serialize($user);
+
+                addRole($user->role);
             } else {
-                getMessages()->addError('Niepoprawne dane logowania');
+                getMessages()->addError('Niepoprawny login lub hasło');
             }
         }
 
@@ -73,7 +83,7 @@ class LoginCtrl {
 
         session_destroy();
 
-        getMessages()->addInfo('Zostałeś wylogowany!');
+        getMessages()->addInfo('Poprawnie wylogowano z systemu');
 
         $this->generateView();
     }
