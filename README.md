@@ -7,6 +7,7 @@ Stworzenie kalkulatora internetowego uwzględniającego kwotę, okres i oprocent
 Zastosowałem tu trochę nietypowy sposób pracy z repozytorium, mianowicie kolejne wersje znajdują się w osobnych gałęziach. 
 Pierwsza, najprostsza implementacja znajduje się w gałęzi 1, kolejna wersja (dodanie ochrony do kalkulatora) w gałęzi 2 itd.
 
+
 Spis etapów:
 
 1. [Widok, kontroler.](https://github.com/kamilponikwia/AI/tree/step-1) 
