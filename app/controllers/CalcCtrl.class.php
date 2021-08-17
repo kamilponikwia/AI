@@ -6,6 +6,7 @@ use lib\smarty\Smarty;
 use core\Messages;
 use app\forms\CalcForm;
 use app\transfers\CalcResult;
+use Medoo\Medoo;
 
 class CalcCtrl {
 
@@ -82,6 +83,33 @@ class CalcCtrl {
             $this->result->result = number_format($monthly_instalment + $monthly_instalment_interest, 2, ',', ' ');
         }
 
+        try {
+            $database = new \Medoo\Medoo([
+                'type' => 'mysql',
+                'host' => 'localhost',
+                'database' => 'kalkulator',
+                'username' => 'root',
+                'password' => '',
+                'charset' => 'utf8',
+                'collation' => 'utf8_polish_ci',
+                'port' => 3306,
+                'option' => [
+                    \PDO::ATTR_CASE => \PDO::CASE_NATURAL,
+                    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
+                ]
+            ]);
+
+            $database->insert("result", [
+                "amount" => $this->form->amount,
+                "period" => $this->form->period,
+                "interest" => $this->form->interest,
+                "installment" => $this->result->result,
+                "date" => date("Y-m-d")
+            ]);
+        } catch (\PDOException $ex) {
+            getMessages()->addError("DB Error: " . $ex->getMessage());
+        }
+        
         $this->generateView();
     }
 
